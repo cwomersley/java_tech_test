@@ -44,7 +44,8 @@ public class App {
 		int[] distTestData = {3, 9, 50, 15, 99, 7, 65};
 		System.out.println("arrayDistance Test Data = " + Arrays.toString(distTestData));
 		distanceTest = new arrayDistance(distTestData);
-		if (distanceTest.distClosestNumbers() == 1) {
+		// Changed to 2
+		if (distanceTest.distClosestNumbers() == 2) {
 			System.out.println("Distance Test Pass");
 		} else {
 			System.out.println("Distance Test Fail");
@@ -57,7 +58,8 @@ public class App {
 		String dataTests = "find the longest palindrome #fddf# items Step on no pets yay root tenet repaper";
 		palindromeTest = new longestPalindrome(dataTests);
 		System.out.println(dataTests);
-		if (palindromeTest.returnLongestPalindrome() == "Step on no pets" || palindromeTest.returnLongestPalindrome() == "step on no pets") {
+		//Changed to use String.Equals
+		if (palindromeTest.returnLongestPalindrome().equals("Step on no pets" )|| palindromeTest.returnLongestPalindrome().equals("Step on no pets" )) {
 			System.out.println("Palindrome test pass");
 		} else if (palindromeTest.returnLongestPalindrome() == "repaper") {
 			System.out.println("Not quite right have you checked multiple words?");
@@ -69,7 +71,7 @@ public class App {
 
 		//Is a Prime Number
 		System.out.println("|--- Is a Prime Number Test ---|");
-		if (isPrime.isNumberPrime(0) && isPrime.isNumberPrime(999) == false && isPrime.isNumberPrime(233) == true){
+		if (isPrime.isNumberPrime(0) == false && isPrime.isNumberPrime(999) == false && isPrime.isNumberPrime(233) == true){
 			System.out.println("Is prime test passed");
 		} else {
 			System.out.println("Is prime test failed");

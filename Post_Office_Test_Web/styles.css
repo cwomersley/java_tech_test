@@ -1,9 +1,9 @@
 .calculator{
-	height: 300px;
-	width: 200px;
+	height: 190px;
+	width: 190px;
 	border: 3px;
-	border-color: black;
-	background-color: black;
+	border-color: rgb(0, 0, 0);
+	background-color: rgb(2, 8, 56);
 	padding: 5px;
 }
 
@@ -18,4 +18,23 @@
 	width: 30px;
 	height: 30px;
 	margin: 2px;
+	background-color: bisque;
+}
+.operators{
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	background-color: rgb(212, 212, 212);
+}
+.equals{
+	width: 93%;
+	height: 30px;
+	margin: 2px;
+	background-color: rgb(212, 212, 212);
+}
+.clear{
+	width: 30px;
+	height: 30px;
+	margin: 2px;
+	background-color: rgb(187, 75, 75)
 }

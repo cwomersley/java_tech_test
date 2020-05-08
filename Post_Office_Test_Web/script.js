@@ -4,12 +4,11 @@ function evaluateData() {
 	let showBox = document.getElementById("showBox");
 	let dataString = showBox.innerHTML;
 
-	dataString = dataString.replace(/\s/g, "");
-	gatherData(dataString).then((parsedData) => {
-		runOperations(parsedData.numbers[0], parsedData.numbers[1], parsedData.operator).then((answer) => {
-			showBox.textContent = answer;
-		})
-	}).catch((err) => console.log(err))
+	//Check inputs are only what are expexted in a calc
+	dataString = dataString.replace(/[^-()\d/*+]/g, '');
+	//eval can introduce secuirty risks but in this context there is no issue.
+	var answer = eval(dataString);
+	showBox.textContent = answer;
 }
 
 function addToShowBox(input) {
@@ -57,4 +56,17 @@ function gatherData(dataString) {
 			reject(err);
 		}
 	})
+}
+//Remove last entry -add clear all when clearing after a result
+function undo() {
+	let showBox = document.getElementById("showBox");
+	showBox.innerHTML = showBox.innerHTML.slice(0,-1)
+	return;
+}
+
+//Set showBox to empty string
+function clearShowBox() {
+	let showBox = document.getElementById("showBox");
+	showBox.innerHTML = "";
+	return;
 }

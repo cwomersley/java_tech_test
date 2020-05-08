@@ -1,4 +1,5 @@
 package app.testFiles;
+import java.util.Arrays;
 
 public class arrayDistance {
 
@@ -10,7 +11,24 @@ public class arrayDistance {
 
     // Returns the distance between the two closest numbers.
     public int distClosestNumbers() { 
-		// try to implement it!
-		return testArray[0]; //Not correct
+
+		//Order the elements in the array 
+		Arrays.sort(testArray);
+
+		int dist;
+		int miDist = Integer.MAX_VALUE;
+		//Loop through comparing difference between current and next item
+
+		for (int i = 0; i < testArray.length; i++) {
+
+			if(i < testArray.length - 1 ){
+			 dist = Math.abs(testArray[i+1] - testArray[i]);
+			 if(dist < miDist)
+			 miDist = dist;
+			}
+		}
+
+		
+		return miDist; 
     }
 }
